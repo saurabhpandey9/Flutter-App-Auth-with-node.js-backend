@@ -6,6 +6,7 @@ const passport = require('passport')
 const bodyParser= require('body-parser')
 const root =require('./routers/index')
 const router = require('./routers/index')
+const { Passport } = require('passport')
 connectDB()
 
 const app =express()
@@ -21,6 +22,8 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended : false}))
 app.use(bodyParser.json())
 app.use(router)
+app.use(passport.initialize())
+require('./config/passport')(passport)
 
 
 

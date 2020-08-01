@@ -16,4 +16,7 @@ router.get('/dashboard', (req,res)=>{
 router.post('/adduser', actions.addNew)
 router.post('/authenticate', actions.authenticate)
 
+// @desc for token authenticatio of add user
+router.get('/getinfo',actions.getInfo)
+
 module.exports =router
